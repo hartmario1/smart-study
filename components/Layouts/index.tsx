@@ -4,7 +4,10 @@ import Navigation from "../Navigation";
 
 const StandardLayout = ({ children }: any) => {
   return(
-    <Flex flexDirection= "column" h = "100vh" w = "100%" overflowY = "auto"
+    <Flex flexDirection= "column"
+    h = "100vh"
+    w = "100%"
+    overflowY = "auto"
     css = {{
       '&::-webkit-scrollbar': {
         width: '4px'

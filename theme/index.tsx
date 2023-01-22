@@ -1,11 +1,25 @@
 import { extendTheme } from '@chakra-ui/react';
+import { checkboxAnatomy } from '@chakra-ui/anatomy'
+import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
+
+const { definePartsStyle, defineMultiStyleConfig } =
+  createMultiStyleConfigHelpers(checkboxAnatomy.keys)
+
+const baseStyle = definePartsStyle({
+  control: {
+    borderRadius: 6, // change the border radius of the control
+    _checked: {
+      bg: '#6366f1',
+      borderColor: '#6366f1'
+    }
+  },
+})
+
+export const checkboxTheme = defineMultiStyleConfig({ baseStyle })
 
 const COLORS = {
-  purple: '#7252ff',
-  whitepurple: '#9f89ff',
-  whiteblue: '#262e40ff',
-  bgblue: '#1a202c',
-  greypale: '#99AAB5'
+  purple: '#6366f1',
+  hoverpurple: '#4446A6',
 } as const;
 Object.freeze(COLORS);
 
@@ -23,5 +37,6 @@ export { COLORS, CONFIG, STYLES };
 export default extendTheme({
   styles: STYLES,
   config: CONFIG,
-  colors: COLORS
+  colors: COLORS,
+  components: { Checkbox: checkboxTheme }
 });

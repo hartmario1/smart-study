@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import NextLink from 'next/link'
 import { useState } from "react"
 import { GiBookCover } from 'react-icons/gi';
+import { useRouter } from "next/router";
 
 interface Account {
   email: string;
@@ -13,11 +14,13 @@ interface Account {
 const LogIn = () => {
   const [show, setShow] = useState(false)
   const handleClick = () => setShow(!show)
+  const router = useRouter()
 
   return (
     <Formik<Account> initialValues = {{ email: '', password: '' }}
       onSubmit = {async values => {
         console.log(values.email, values.password)
+        router.push('/')
       }}
       validationSchema = {Yup.object().shape({
         email: Yup.string().required('This field is required!'),

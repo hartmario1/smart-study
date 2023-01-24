@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Center, Flex } from "@chakra-ui/react";
 import React from "react";
 import Navigation from "../Navigation";
 
@@ -19,10 +19,14 @@ const StandardLayout = ({ children }: any) => {
         background: '#1a202c',
       }
     }}>
-      <Box w = "100%" minW = "350px" paddingX = "20px">
+      <Box w = "100%" minW = "350px" paddingX = {{ base: '7px', md: '20px' }}>
         <Navigation />
-        {children}
       </Box>
+      <Center>
+        <Box width = {{ base: 'full', md: '70%' }} minW = "350px" paddingX = "20px">
+          {children}
+        </Box>
+      </Center>
     </Flex>
   );
 }

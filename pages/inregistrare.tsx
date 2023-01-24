@@ -4,6 +4,7 @@ import { MdSupervisorAccount } from 'react-icons/md';
 import NextLink from 'next/link'
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
+import { useRouter } from "next/router";
 
 interface CreateAccount {
   email: string;
@@ -14,11 +15,13 @@ interface CreateAccount {
 const SignUp = () => {
   const [show, setShow] = useState(false)
   const handleClick = () => setShow(!show)
+  const router = useRouter();
 
   return (
     <Formik<CreateAccount> initialValues = {{ email: '', password: '', acceptTerms: false }}
       onSubmit = {async values => {
         console.log(values.email, values.password)
+        router.push('/autentificare')
       }}
       validationSchema = {Yup.object().shape({
         email: Yup.string().required('This field is required!'),

@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Center, Flex, Heading, IconButton, Link, LinkOverlay, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Center, Flex, Heading, IconButton, Link, Stack, useDisclosure } from "@chakra-ui/react"
 import NextLink from "next/link";
 import { FiMenu, FiX } from 'react-icons/fi';
 
@@ -8,11 +8,11 @@ const Navigation = () => {
   return(
     <Flex as = "nav" p = {4} align = "center" justify = "space-between" wrap = "wrap">
       <Flex align = "center" mr = {5}>
-        <LinkOverlay href = "/">
+        <Link href = "/">
           <Button variant="unstyled">
             <Heading size='md' color="black">SmartStudy</Heading>
           </Button>
-        </LinkOverlay>
+        </Link>
       </Flex>
 
       <Flex align = "center" paddingY = "3" paddingX = "2">
@@ -27,8 +27,18 @@ const Navigation = () => {
       <Box display = {{ base: isOpen ? 'flex' : 'none', md: 'block' }}
         flexDirection = {{ base: 'column', md: 'unset' }}
         width = {{ base: 'full', md: 'auto' }}>
-        <Button variant="ghost" borderRadius="2xl">Găsește un profesor</Button>
-        <Button variant="ghost" borderRadius="2xl">Aplica ca profesor</Button>
+        <Stack direction={['column', 'row']}>
+          <Center>
+            <Link as={NextLink} href="/profesori">
+              <Button variant="ghost" borderRadius="2xl">Găsește un profesor</Button>
+            </Link>
+          </Center>
+          <Center>
+            <Link>
+              <Button variant="ghost" borderRadius="2xl">Aplica ca profesor</Button>
+            </Link>
+          </Center>
+        </Stack>
       </Box>
 
       <Box display = {{ base: isOpen ? 'flex' : 'none', md: isOpen ? 'flex' : 'block' }}

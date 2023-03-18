@@ -1,5 +1,5 @@
 import { Box, Button, Center, FormControl, FormLabel, Heading, Link, Select, Stack } from "@chakra-ui/react";
-import StandardLayout from "../components/Layouts";
+import StandardLayout from "../components/Layouts/standard";
 import TeacherCard from "../components/TeacherCard";
 
 const Profesori = () => {

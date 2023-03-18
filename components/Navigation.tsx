@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Center, Flex, Heading, IconButton, Link, Stack, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Center, Flex, Heading, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react"
 import NextLink from "next/link";
 import { FiMenu, FiX } from 'react-icons/fi';
 
@@ -7,10 +7,14 @@ const Navigation = () => {
 
   return(
     <Flex as = "nav" p = {4} align = "center" justify = "space-between" wrap = "wrap">
-      <Flex align = "center" mr = {5}>
+      <Flex align = "center">
         <Link href = "/">
           <Button variant="unstyled">
-            <Heading size='md' color="black">SmartStudy</Heading>
+            <Image
+            objectFit='cover'
+            maxW={{ base: '200px', sm: '230px' }}
+            src='/smartstudy.png'
+            alt="SmartStudy" />
           </Button>
         </Link>
       </Flex>

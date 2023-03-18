@@ -20,6 +20,7 @@ export const checkboxTheme = defineMultiStyleConfig({ baseStyle })
 const COLORS = {
   purple: '#6366f1',
   hoverpurple: '#4446A6',
+  bg: '#fafafa'
 } as const;
 Object.freeze(COLORS);
 

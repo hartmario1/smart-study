@@ -3,7 +3,7 @@ import React from "react";
 import Footer from "../Footer";
 import Navigation from "../Navigation";
 
-const IndexLayout = ({ children }: any) => {
+const StandardLayout = ({ children }: any) => {
   return(
     <Flex flexDirection= "column"
     h = "100vh"
@@ -26,7 +26,7 @@ const IndexLayout = ({ children }: any) => {
         </Box>
       </Center>
       <Center>
-        <Box width = {{ base: 'full', md: '100%' }} minW = "350px">
+        <Box width = {{ base: 'full', md: '70%' }} minW = "350px" paddingX = "20px">
           {children}
         </Box>
       </Center>
@@ -35,4 +35,4 @@ const IndexLayout = ({ children }: any) => {
   );
 }
  
-export default IndexLayout;
+export default StandardLayout;

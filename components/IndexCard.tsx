@@ -1,11 +1,7 @@
-import { Box, chakra, shouldForwardProp } from "@chakra-ui/react";
-import { motion, isValidMotionProp } from 'framer-motion';
+import { Box } from "@chakra-ui/react";
+import ChakraBox from "./ChakraBox";
 
 const IndexCard = ({ title, content, featureIcon }: { title: string; content: string; featureIcon: JSX.Element }) => {
-  const ChakraBox = chakra(motion.div, {
-    shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
-  });
-
   return (
     <ChakraBox
       whileHover={{ scale: 1.2 }}

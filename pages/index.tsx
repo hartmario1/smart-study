@@ -30,7 +30,12 @@ const HomePage = () => {
               <Box paddingBottom={{ base: '10px', sm: '0px' }} w="100%">
                 <Input type='email' placeholder="Introduce emailul..."  />
               </Box>
+              <ChakraBox
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                opacity="1">
               <Button w="300px" borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Înscrie-te la newsletter</Button>
+            </ChakraBox>
             </HStack>
           </Box>
           <Box>
@@ -56,7 +61,7 @@ const HomePage = () => {
               repeat: Infinity,
               repeatType: "loop",
             }}>
-              <Img borderRadius="30" src = "/teaching.jpg" maxW={{ base: '300px', sm: '500px' }} />
+              <Img borderRadius="30" src = "/board.jpg" maxW={{ base: '300px', sm: '500px' }} />
             </ChakraBox>
           </Box>
           <Box align="center" maxW="37rem" justifySelf="center">
@@ -69,8 +74,14 @@ const HomePage = () => {
               paddingBottom="2">Suntem aici pentru a te ajuta!
             </Heading>
             <Text paddingBottom="4" fontSize={{ base: 'lg', sm: 'xl' }}>
-              Credem că toată lumea merită acces la o educație de calitate, iar platforma noastră de îndrumare online este concepută pentru a face asta o realitate. Indiferent dacă sunteți un student care se luptă cu o materie dificilă sau un adult care dorește să învețe o nouă abilitate, suntem aici pentru a vă ajuta. Încercați astăzi platforma noastră și vedeți cum tutorii noștri vă pot ajuta să vă atingeți întregul potențial!            </Text>
-            <Button w="100%" borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Înscrie-te acum</Button>
+              Credem că toată lumea merită acces la o educație de calitate, iar platforma noastră de îndrumare online este concepută pentru a face asta o realitate. Indiferent dacă sunteți un student care se luptă cu o materie dificilă sau un adult care dorește să învețe o nouă abilitate, suntem aici pentru a vă ajuta. Încercați astăzi platforma noastră și vedeți cum tutorii noștri vă pot ajuta să vă atingeți întregul potențial!
+            </Text>
+            <ChakraBox
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                opacity="1">
+              <Button w="100%" borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Înscrie-te acum</Button>
+            </ChakraBox>
           </Box>
         </Stack>
       </Center>
@@ -132,7 +143,12 @@ const HomePage = () => {
             <Text paddingBottom="6" fontSize={{ base: 'lg', sm: 'xl' }}>
               Alăturați-vă platformei noastre de îndrumare online și extindeți-vă ca educator! Veți avea oportunitatea de a intra în legătură cu studenți din întreaga țară, de a oferi instruire personalizată și de a avea un impact pozitiv asupra succesului lor academic. Interfața noastră ușor de utilizat și programarea flexibilă fac ca instruirea să fie ușoară și convenabilă. Nu ratați această șansă de a vă împărtăși experiența și de a ajuta studenții să-și atingă potențialul maxim!     
             </Text>
-            <Button w="100%" borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Înscrie-te acum</Button>
+            <ChakraBox
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                opacity="1">
+              <Button w="100%" borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Înscrie-te acum</Button>
+            </ChakraBox>
           </Box>
         </Stack>
       </Center>

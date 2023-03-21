@@ -1,6 +1,7 @@
 import { Box, Button, ButtonGroup, Center, Flex, Heading, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react"
 import NextLink from "next/link";
 import { FiMenu, FiX } from 'react-icons/fi';
+import ChakraBox from "./ChakraBox";
 
 const Navigation = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -34,12 +35,22 @@ const Navigation = () => {
         <Stack direction={['column', 'row']}>
           <Center>
             <Link as={NextLink} href="/profesori">
-              <Button variant="ghost" borderRadius="2xl">Găsește un profesor</Button>
+              <ChakraBox
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                opacity="1">
+                <Button variant="ghost" borderRadius="2xl">Găsește un profesor</Button>
+              </ChakraBox>
             </Link>
           </Center>
           <Center>
             <Link>
-              <Button variant="ghost" borderRadius="2xl">Aplica ca profesor</Button>
+              <ChakraBox
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                opacity="1">
+                <Button variant="ghost" borderRadius="2xl">Aplica ca profesor</Button>
+              </ChakraBox>
             </Link>
           </Center>
         </Stack>
@@ -56,10 +67,20 @@ const Navigation = () => {
         <Center>
           <ButtonGroup spacing={1} variant='outline'>
             <Link as={NextLink} href = "/inregistrare">
-              <Button borderRadius="2xl" color="black">Înregistrare</Button>
+              <ChakraBox
+                  whileHover={{ scale: 0.9 }}
+                  whileTap={{ scale: 0.8 }}
+                  opacity="1">
+                <Button borderRadius="2xl" color="black">Înregistrare</Button>
+              </ChakraBox>
             </Link>
             <Link as={NextLink} href = "/autentificare">
-              <Button borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Autentificare</Button>
+              <ChakraBox
+                  whileHover={{ scale: 0.9 }}
+                  whileTap={{ scale: 0.8 }}
+                  opacity="1">
+                <Button borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Autentificare</Button>
+              </ChakraBox>
             </Link>    
           </ButtonGroup>
         </Center>

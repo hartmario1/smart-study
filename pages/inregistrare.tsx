@@ -1,6 +1,5 @@
-import { Box, Button, Center, Checkbox, Input, InputGroup, InputRightElement, Link, Stack, Text } from "@chakra-ui/react"
+import { Box, Button, Center, Checkbox, FormControl, FormLabel, Image, Input, InputGroup, InputRightElement, Link, Stack, Text } from "@chakra-ui/react"
 import { useState } from "react"
-import { MdSupervisorAccount } from 'react-icons/md';
 import NextLink from 'next/link'
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
@@ -31,19 +30,20 @@ const SignUp = () => {
       {({ handleSubmit, errors, touched }) => (
         <Form>
           <Center h="100vh"
-            bgGradient='linear(purple 0%, white 0%, purple 200%)'>
-            <Box backgroundColor="white"
+            bgColor="blackAlpha.100" flexDirection="column">
+              <Image
+                  objectFit='cover'
+                  maxW={{ base: '200px', sm: '230px' }}
+                  src='/smartstudy.png'
+                  alt="SmartStudy" />
+            <Box
               minWidth = {{ base: '95%', md: '2xl' }}
-              maxW='sm'
-              borderWidth='1px'
-              borderRadius='3xl'
-              boxShadow="xl"
+              maxW='sm'              
               overflow='hidden'
               paddingX="5"
               paddingTop="10"
               paddingBottom="5">
               <Center flexDirection="column" paddingBottom="5">
-                <MdSupervisorAccount size={70} color="#6366f1" />
                 <Text fontSize="xl" fontWeight="bold">Înregistrare</Text>
                 <Text color="gray.500">
                   Ai deja cont? {' '}
@@ -54,13 +54,17 @@ const SignUp = () => {
                 <Box paddingBottom="5">
                   <Field name = "email">
                     {({ field }: { field: any }) => (
+                      <FormControl>
+                      <FormLabel paddingLeft="2">Email</FormLabel>
                       <Input
                         focusBorderColor='purple'
                         placeholder='Email Address'
                         size="lg"
-                        borderRadius="lg"
+                        borderRadius="md"
+                        borderColor="purple"
                         {...field}
                       />
+                    </FormControl>
                     )}
                   </Field>
                   {errors.email && touched.email
@@ -74,21 +78,25 @@ const SignUp = () => {
                 <Box paddingBottom="2">
                   <Field name = "password">
                     {({ field }: { field: any }) => (
+                      <FormControl>
+                      <FormLabel paddingLeft="2">Parolă</FormLabel>
                       <InputGroup size='lg'>
                         <Input
                           pr='4.5rem'
                           type={show ? 'text' : 'password'}
                           placeholder='Password'
                           focusBorderColor='purple'
-                          borderRadius="lg"
+                          borderRadius="md"
+                          borderColor="purple"
                           {...field}
                         />
                         <InputRightElement width='4.5rem'>
-                          <Button h='1.75rem' size='sm' onClick={handleClick}>
+                          <Button h='1.75rem' size='sm' onClick={handleClick} bgColor="purple" color="white">
                             {show ? 'Hide' : 'Show'}
                           </Button>
                         </InputRightElement>
                       </InputGroup>
+                    </FormControl>
                     )}
                   </Field>
                   {errors.password && touched.password
@@ -117,7 +125,7 @@ const SignUp = () => {
                 <Button
                   onClick = {event => handleSubmit(event as any)}
                   w="100%"
-                  borderRadius="2xl"
+                  borderRadius="lg"
                   backgroundColor='purple'
                   _hover={{ bg: "hoverpurple" }}
                   color="white">Înregistrare</Button>

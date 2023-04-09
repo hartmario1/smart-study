@@ -28,7 +28,7 @@ const HomePage = () => {
             </Text>
             <HStack paddingTop="6" flexDirection={['column', 'row']}>
               <Box paddingBottom={{ base: '10px', sm: '0px' }} w="100%">
-                <Input type='email' placeholder="Introduce emailul..."  />
+                <Input focusBorderColor='purple' type='email' placeholder="Introduce emailul..."  />
               </Box>
               <ChakraBox
                 whileHover={{ scale: 1.1 }}
@@ -39,7 +39,7 @@ const HomePage = () => {
             </HStack>
           </Box>
           <Box>
-            <Image src = "/City.png" maxW={{ base: '300px', sm: '650px' }} />
+            <Image src = "/teacher_purple.png" maxW={{ base: '300px', sm: '650px' }} />
           </Box>
         </Stack>
       </Center>
@@ -48,21 +48,7 @@ const HomePage = () => {
         <Stack 
           align="center" direction={['column', 'row']} padding="5" spacing={{ base: '20px', sm: '75px' }}> 
           <Box>
-            <ChakraBox
-            animate={{
-              scale: [1, 1, 1, 1, 1],
-              rotate: [0, 0, 10, -10, 0],
-              translateX: ["0%", "-10%", "-10%", "-10%", "0%"],
-            }}
-            // @ts-ignore
-            transition={{
-              duration: 3,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatType: "loop",
-            }}>
-              <Img borderRadius="30" src = "/board.jpg" maxW={{ base: '300px', sm: '500px' }} />
-            </ChakraBox>
+            <Img borderRadius="10" src = "/board_purple.jpg" maxW={{ base: '300px', sm: '500px' }} />
           </Box>
           <Box align="center" maxW="37rem" justifySelf="center">
             <Heading
@@ -129,7 +115,7 @@ const HomePage = () => {
         <Stack 
           align="center" direction={['column', 'row']} padding="5" spacing={{ base: '20px', sm: '75px' }}> 
           <Box>
-            <Image src = "/teacher.png" maxW={{ base: '300px', sm: '500px' }} />
+            <Image src = "/City_purple.png" maxW={{ base: '300px', sm: '500px' }} />
           </Box>
           <Box align="center" maxW="37rem" justifySelf="center">
             <Heading

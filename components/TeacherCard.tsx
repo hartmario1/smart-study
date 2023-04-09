@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Card, CardBody, Center, Divider, Flex, Heading, HStack, Image, Spacer, Stack, Text } from "@chakra-ui/react";
+import { Box, Card, CardBody, Center, Divider, Flex, Heading, HStack, Image, Spacer, Stack, Text } from "@chakra-ui/react";
 import { AiFillStar } from 'react-icons/ai';
 
 const TeacherCard = () => {

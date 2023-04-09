@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Center, Flex, Heading, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Center, Flex, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react"
 import NextLink from "next/link";
 import { FiMenu, FiX } from 'react-icons/fi';
 import ChakraBox from "./ChakraBox";

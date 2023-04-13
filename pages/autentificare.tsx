@@ -19,7 +19,7 @@ const SignUp = () => {
     <Formik<Account> initialValues = {{ email: '', password: '' }}
       onSubmit = {async values => {
         console.log(values.email, values.password)
-        router.push('/')
+        router.push('/profil')
       }}
       validationSchema = {Yup.object().shape({
         email: Yup.string().required('This field is required!'),

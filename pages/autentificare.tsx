@@ -4,6 +4,7 @@ import NextLink from 'next/link'
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { useRouter } from "next/router";
+import { FcGoogle } from 'react-icons/fc';
 
 interface Account {
   email: string;
@@ -107,15 +108,28 @@ const SignUp = () => {
                     : null}
                 </Box>
               </Stack>
-              <Stack spacing={2} paddingY='5'>
+              <Box paddingTop='4'>
                 <Button
                   onClick = {event => handleSubmit(event as any)}
                   w="100%"
-                  borderRadius="lg"
                   backgroundColor='purple'
                   _hover={{ bg: "hoverpurple" }}
                   color="white">Autentificare</Button>
-              </Stack>
+              </Box>
+              <Box paddingTop='3' paddingBottom={"7"}>
+                <Button
+                  onClick = {() => console.log("Google log in")}
+                  w="100%"
+                  backgroundColor='white'
+                  border={'1px'}
+                  borderColor="gray.400"
+                  leftIcon={<FcGoogle />}
+                  variant={'outline'}>
+                  <Center>
+                    <Text>Autentificare cu Google</Text>
+                  </Center>
+                </Button>
+              </Box>
               <Center>
                 <Link borderRadius="2xl" color="purple">Ai uitat parola?</Link>
               </Center>

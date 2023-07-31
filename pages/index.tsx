@@ -38,7 +38,7 @@ const HomePage = () => {
             </HStack>
           </Box>
           <Box>
-            <Image src = "/teacher_purple.png" minW={"50%"} maxW={[ "100%" ]} />
+            <Image src = "/teacher_purple.png" maxW={{ base: '300px', sm: '650px' }} alt="teacher_purple" />
           </Box>
         </Stack>
       </Center>
@@ -114,7 +114,7 @@ const HomePage = () => {
         <Stack 
           align="center" direction={['column', 'row']} padding="5" spacing={{ base: '20px', sm: '75px' }}> 
           <Box>
-            <Image src = "/City_purple.png" maxW={{ base: '300px', sm: '500px' }} />
+            <Image src = "/City_purple.png" maxW={{ base: '300px', sm: '500px' }} alt="teacher_purple" />
           </Box>
           {/* @ts-ignore */}
           <Box align="center" maxW="37rem" justifySelf="center">

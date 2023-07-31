@@ -134,7 +134,9 @@ const Profile = () => {
                   direction="horizontal"
                   color="#6366f1"
                   style = {{ minWidth: "100%" }}
+                  // @ts-ignore
                   onChange={item => setDate(item)}
+                  // @ts-ignore
                   date={date}
                   />
                 </Center>

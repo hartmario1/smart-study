@@ -44,7 +44,7 @@ const Navigation = () => {
               <ChakraBox
                 whileTap={{ scale: 0.9 }}
                 opacity="1">
-                <Button variant="ghost" borderRadius="2xl">Găsește un profesor</Button>
+                <Button variant="ghost" borderRadius="2xl">Găsește un curs</Button>
               </ChakraBox>
             </Link>
           </Center>

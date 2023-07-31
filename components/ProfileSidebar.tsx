@@ -93,7 +93,7 @@ const SidebarContent = ({ onClose_, ...rest }: SidebarProps) => {
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Center paddingTop="5" paddingX="4">
-          <Image src = "/smartstudy.png" w={{ base: '150px', sm: '150px' }} />
+          <Image src = "/smartstudy.png" w={{ base: '150px', sm: '150px' }} alt="teacher_purple" />
         </Center>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose_} />
       </Flex>
@@ -185,7 +185,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         aria-label="open menu"
         icon={<FiMenu />}
       />
-      <Image paddingLeft="2" src = "/smartstudy.png" w={{ base: '150px', sm: '150px' }} />
+      <Image paddingLeft="2" src = "/smartstudy.png" w={{ base: '150px', sm: '150px' }} alt="teacher_purple" />
     </Flex>
   );
 };

@@ -34,16 +34,16 @@ const Profile = () => {
 
   return (
     <ProfileLayout>
-      <ProfileSidebar children={
+      <ProfileSidebar>
         <Stack direction={"row"}>
           <Box paddingY={8} w="100%" paddingX={6}>
             <Stack direction={"row"}>
               <Box w="100%">
                 <InputGroup>
                   <InputLeftElement
-                    pointerEvents='none'
-                    children={<SearchIcon color='gray.400' />}
-                  />
+                    pointerEvents='none'>
+                    <SearchIcon color='gray.400' />
+                  </InputLeftElement>
                   <Input color={"gray.500"} variant="outline" type='search' placeholder='Search for a course, a lesson, etc...' borderRadius="2xl" focusBorderColor='#6366f1' />
                 </InputGroup>
               </Box>
@@ -172,7 +172,7 @@ const Profile = () => {
             </Stack>
           </Box>
         </Stack>  
-      } />
+      </ProfileSidebar>
     </ProfileLayout>
   );
 }; 

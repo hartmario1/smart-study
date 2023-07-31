@@ -1,4 +1,4 @@
-import { Box,
+import { Avatar, Box,
   Button,
   Center,
   Heading,
@@ -17,12 +17,6 @@ import { Box,
   PopoverHeader,
   PopoverTrigger,
   Stack, 
-  Stat, 
-  StatArrow, 
-  StatGroup, 
-  StatHelpText, 
-  StatLabel, 
-  StatNumber, 
   Text, 
   VStack} from "@chakra-ui/react";
 import 'react-date-range/dist/styles.css';
@@ -74,11 +68,9 @@ const Profile = () => {
                 
               </Box>
               <Box>
-                <Image
-                  borderRadius='full'
+                <Avatar
                   boxSize='40px'
                   src='https://bit.ly/dan-abramov'
-                  alt='Dan Abramov'
                 />
               </Box>
             </Stack>

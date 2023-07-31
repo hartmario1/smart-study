@@ -1,7 +1,8 @@
-import { Box, Button, ButtonGroup, Center, Flex, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Center, Flex, IconButton, Image, Link, Select, Stack, useDisclosure } from "@chakra-ui/react"
 import NextLink from "next/link";
 import { FiMenu, FiX } from 'react-icons/fi';
 import ChakraBox from "./ChakraBox";
+import { BsCart2, BsFillPersonFill } from 'react-icons/bs';
 
 const Navigation = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -21,12 +22,17 @@ const Navigation = () => {
       </Flex>
 
       <Flex align = "center" paddingY = "3" paddingX = "2">
-        <IconButton display = {{ base: 'flex', md: 'none' }}
-          aria-label = "Open menu"
-          variant = "ghost"
-          icon = {isOpen ? <FiX /> : <FiMenu />}
-          onClick = {onToggle}
-        />
+        <ChakraBox
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.8 }}
+          opacity="1">
+            <IconButton display = {{ base: 'flex', md: 'none' }}
+            aria-label = "Open menu"
+            variant = "ghost"
+            icon = {isOpen ? <FiX /> : <FiMenu />}
+            onClick = {onToggle}
+            />
+        </ChakraBox>
       </Flex>
 
       <Box display = {{ base: isOpen ? 'flex' : 'none', md: 'block' }}
@@ -36,8 +42,7 @@ const Navigation = () => {
           <Center>
             <Link as={NextLink} href="/profesori">
               <ChakraBox
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.8 }}
+                whileTap={{ scale: 0.9 }}
                 opacity="1">
                 <Button variant="ghost" borderRadius="2xl">Găsește un profesor</Button>
               </ChakraBox>
@@ -46,8 +51,7 @@ const Navigation = () => {
           <Center>
             <Link>
               <ChakraBox
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.8 }}
+                whileTap={{ scale: 0.9 }}
                 opacity="1">
                 <Button variant="ghost" borderRadius="2xl">Aplica ca profesor</Button>
               </ChakraBox>
@@ -65,21 +69,24 @@ const Navigation = () => {
         flexDirection = {{ base: 'column', md: 'unset' }}
         width = {{ base: 'full', md: 'auto' }}>
         <Center>
+          <Box paddingRight={1}>
+            <Select borderRadius="2xl" placeholder='EN'>
+              <option>DE</option>
+            </Select>
+          </Box>
           <ButtonGroup spacing={1} variant='outline'>
             <Link as={NextLink} href = "/inregistrare">
               <ChakraBox
-                  whileHover={{ scale: 0.9 }}
-                  whileTap={{ scale: 0.8 }}
+                  whileTap={{ scale: 0.9 }}
                   opacity="1">
-                <Button borderRadius="2xl" color="black">Înregistrare</Button>
+                <Button leftIcon={<BsFillPersonFill />} aria-label="Profile" borderRadius="2xl" color="black">Profile</Button>
               </ChakraBox>
             </Link>
             <Link as={NextLink} href = "/autentificare">
               <ChakraBox
-                  whileHover={{ scale: 0.9 }}
-                  whileTap={{ scale: 0.8 }}
+                  whileTap={{ scale: 0.9 }}
                   opacity="1">
-                <Button borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Autentificare</Button>
+                <IconButton icon={<BsCart2 />} aria-label="Profile" borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white" />
               </ChakraBox>
             </Link>    
           </ButtonGroup>

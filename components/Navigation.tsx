@@ -1,10 +1,12 @@
-import { Box, Button, ButtonGroup, Center, Flex, IconButton, Image, Link, Select, Stack, useDisclosure } from "@chakra-ui/react"
+import { Badge, Box, Button, ButtonGroup, Center, Flex, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react"
 import NextLink from "next/link";
 import { FiMenu, FiX } from 'react-icons/fi';
 import ChakraBox from "./ChakraBox";
 import { BsCart2, BsFillPersonFill } from 'react-icons/bs';
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+import { useCart } from "./CartContext";
+import CartPopover from "./CartPopover";
 
 const Navigation = () => {
   const { isOpen, onToggle } = useDisclosure();
@@ -15,6 +17,8 @@ const Navigation = () => {
     const newLocale = lang === 'en' ? 'de' : 'en';
     router.push(router.pathname, router.pathname, { locale: newLocale });
   }
+  
+  const { itemCount } = useCart();
 
   return(
     <Flex as = "nav" p = {4} align = "center" justify = "space-between" wrap = "wrap">
@@ -49,7 +53,7 @@ const Navigation = () => {
         width = {{ base: 'full', md: 'auto' }}>
         <Stack direction={['column', 'row']}>
           <Center>
-            <Link as={NextLink} href="/profesori">
+            <Link as={NextLink} href="/courses">
               <ChakraBox
                 whileTap={{ scale: 0.9 }}
                 opacity="1">
@@ -95,13 +99,10 @@ const Navigation = () => {
                 <Button leftIcon={<BsFillPersonFill />} aria-label="Profile" borderRadius="2xl" color="black">{t('navProfile')}</Button>
               </ChakraBox>
             </Link>
-            <Link as={NextLink} href = "/autentificare">
-              <ChakraBox
-                  whileTap={{ scale: 0.9 }}
-                  opacity="1">
-                <IconButton icon={<BsCart2 />} aria-label="Profile" borderRadius="2xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white" />
-              </ChakraBox>
-            </Link>    
+
+            <Flex align="center" position="relative">
+              <CartPopover />
+            </Flex>
           </ButtonGroup>
         </Center>
       </Box>

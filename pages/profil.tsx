@@ -89,7 +89,7 @@ const Profile = () => {
                     color="white">Ai programate 3 meditații <br/> săptămâna aceasta!
                   </Text>
                   <Box paddingY={"8"} paddingX="14">
-                    <Link as={NextLink} href="/profesori">
+                    <Link as={NextLink} href="/courses">
                       <Button rightIcon={<ArrowRightIcon />} variant="filled" _hover={{ bg: "gray.300" }} bgColor={"white"} borderRadius="xl" size={"sm"} >Caută mai mulți meditatori</Button>
                     </Link>
                   </Box>

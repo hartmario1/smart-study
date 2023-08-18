@@ -5,7 +5,6 @@ import ChakraBox from "./ChakraBox";
 import { BsCart2, BsFillPersonFill } from 'react-icons/bs';
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
-import { useCart } from "./CartContext";
 import CartPopover from "./CartPopover";
 
 const Navigation = () => {
@@ -18,8 +17,6 @@ const Navigation = () => {
     router.push(router.pathname, router.pathname, { locale: newLocale });
   }
   
-  const { itemCount } = useCart();
-
   return(
     <Flex as = "nav" p = {4} align = "center" justify = "space-between" wrap = "wrap">
       <Flex align = "center">
@@ -62,7 +59,7 @@ const Navigation = () => {
             </Link>
           </Center>
           <Center>
-            <Link>
+            <Link as={NextLink} href="/become">
               <ChakraBox
                 whileTap={{ scale: 0.9 }}
                 opacity="1">

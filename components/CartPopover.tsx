@@ -1,7 +1,9 @@
 import { useCart } from './CartContext';
-import { Popover, PopoverTrigger, PopoverContent, PopoverBody, Box, IconButton, Badge, Center, Text, Button, Heading, HStack, Flex, useColorModeValue, Divider } from '@chakra-ui/react';
+import { Popover, PopoverTrigger, PopoverContent, PopoverBody, Box, IconButton, Badge, Center, Text, Button, Heading, HStack, Flex, useColorModeValue, Divider, Link } from '@chakra-ui/react';
 import { BsCart2 } from 'react-icons/bs';
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
+import ChakraBox from './ChakraBox';
+import NextLink from 'next/link';
 
 const CartItem = () => {
   return (
@@ -90,7 +92,20 @@ const CartPopover= () => {
                 </Text>
               </Flex>
               <Center paddingTop="2">
-                <Button w="100%" borderRadius="xl" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Checkout!</Button>
+                <Link w="100%" as={NextLink} href="/checkout">
+                  <ChakraBox
+                    whileTap={{ scale: 0.9 }}
+                    opacity="1">
+                      <Button
+                        w="100%"
+                        borderRadius="xl"
+                        backgroundColor="purple"
+                        _hover={{ bg: "hoverpurple" }}
+                        color="white">
+                      Checkout!
+                    </Button>
+                  </ChakraBox>
+                </Link>
               </Center>
             </Box>
           }

@@ -1,6 +1,6 @@
 import { Button, Text, useColorModeValue, VisuallyHidden, Box, Container, Stack, Image } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import { FiFacebook } from 'react-icons/fi';
+import { MdFacebook } from 'react-icons/md';
 import { FaInstagram, FaTwitter } from 'react-icons/fa'
 import ChakraBox from './ChakraBox';
 
@@ -58,7 +58,7 @@ const Footer = () => (
             <FaTwitter />
           </SocialButton>
           <SocialButton label={'YouTube'} href={'#'}>
-            <FiFacebook />
+            <MdFacebook />
           </SocialButton>
           <SocialButton label={'Instagram'} href={'#'}>
             <FaInstagram />

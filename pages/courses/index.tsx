@@ -1,8 +1,8 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Box, Button, Center, Heading, Link, Menu, MenuButton, MenuItem, MenuList, Stack } from "@chakra-ui/react";
 import { useState } from "react";
-import StandardLayout from "../components/Layouts/standard";
-import CourseCard from "../components/CourseCard";
+import StandardLayout from "../../components/Layouts/standard";
+import CourseCard from "../../components/CourseCard";
 
 const Profesori = () => {
   const [selectedUniversity, setSelectedUniversity] = useState("Select your university");
@@ -55,7 +55,8 @@ const Profesori = () => {
                 borderRadius="lg"
                 backgroundColor="purple"
                 _hover={{ bg: "hoverpurple" }}
-                color="white">Filter
+                color="white">
+                  Filter
               </Button>
             </Box>
           </Stack>

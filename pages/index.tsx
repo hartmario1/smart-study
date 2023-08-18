@@ -1,4 +1,4 @@
-import { Box, Button, Center, Divider, Heading, HStack, Image, Img, Input, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Center, Divider, Heading, Image, Img, Stack, Text } from "@chakra-ui/react";
 import IndexCard from "../components/IndexCard";
 import IndexLayout from "../components/Layouts/index";
 import { GiTeacher, GiBlackBook } from 'react-icons/gi';
@@ -38,7 +38,7 @@ const HomePage = () => {
             </Box>
           </Box>
           <Box>
-            <Image src = "/teacher_purple.png" maxW={{ base: '300px', sm: '650px' }} alt="teacher_purple" />
+            <Image src = "/teacher_purple.png" maxW={{ base: '100%', sm: '100%', md: '75%', lg: '100%' }} alt="teacher_purple" />
           </Box>
         </Stack>
       </Center>

@@ -11,11 +11,33 @@ import {
   Flex,
   Button,
   HStack,
+  Icon
 } from '@chakra-ui/react'
+import { useState } from 'react'
+import { useCart } from '../../components/CartContext'
 import ChakraBox from '../../components/ChakraBox'
 import StandardLayout from '../../components/Layouts/standard'
+import { BsCheck2Circle } from 'react-icons/bs';
 
 const Groups = () => {
+  const [isInCart, setIsInCart] = useState(false);
+  const { addToCart } = useCart();
+
+  const product = { id: '1',
+    university: 'Lauder Business School',
+    course: 'Law & Organizations',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero repellat exercitationem, inventore alias iusto possimus! Ipsam tempora dicta dignissimos. Inventore nisi autem reprehenderit expedita reiciendis deserunt non minima consequatur nemo.',
+    price: "80.00",
+    pricehour: "20.00",
+    year: 1,
+    hours: 4,
+  }
+
+  const handleButtonClick = () => {
+    setIsInCart(!isInCart);
+    addToCart(product);
+  };
+
   return (
     <Box
       maxW="md"
@@ -80,13 +102,30 @@ const Groups = () => {
       <ChakraBox
           whileTap={{ scale: 0.9 }}
           opacity="1">
-        <Button mt={4} w="100%" borderRadius="lg" backgroundColor="purple" _hover={{ bg: "hoverpurple" }} color="white">Purchase</Button>
+        <Button
+          mt={4}
+          w="100%"
+          borderRadius="lg"
+          backgroundColor="purple"
+          _hover={{ bg: "hoverpurple" }}
+          color="white"
+          onClick={handleButtonClick}
+          isDisabled={isInCart}>
+            {isInCart 
+              ? <>
+                  <Icon as={BsCheck2Circle} mr={2} />
+                  <Text>
+                    Added to Cart
+                  </Text>
+                </>
+              : 'Purchase'}
+          </Button>
       </ChakraBox>
     </Box>
   )
 }
 
-export default function Simple() {
+const Slug = () => {
   return (
     <StandardLayout>
       <Center paddingTop={20} paddingBottom="14">
@@ -149,3 +188,5 @@ export default function Simple() {
     </StandardLayout>
   )
 }
+
+export default Slug;

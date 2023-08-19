@@ -5,36 +5,36 @@ import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
 import ChakraBox from './ChakraBox';
 import NextLink from 'next/link';
 
-const CartItem = () => {
+const CartItem = ({ product }: any) => {
   return (
     <Center>
       <Box
         w="100%"
-        rounded={'2xl'}
+        rounded={'lg'}
         my={1}
         overflow={'hidden'}
         bg="white"
         border={'1px'}
         borderColor="gray.300">
-        <HStack>
+        <Flex justify="space-between">
           <Box p={2}>
-            <Box bg="black" display={'inline-block'} px={2} py={1} color="white" mb={2} borderRadius="lg">
-              <Text fontSize={'2xs'} fontWeight="medium">
-                Lauder Business School
-              </Text>
-            </Box>
-            <Heading color={'black'} fontSize={'lg'}>
+            <Text fontSize={'sm'}>
               Law & Organizations
-            </Heading>
+            </Text>
           </Box>
-        </HStack>
+          <Box p={2}>
+            <Text fontSize={'sm'}>
+              80€
+            </Text>
+          </Box>
+        </Flex>
       </Box>
     </Center>
   );
 };
 
 const CartPopover= () => {
-  const { itemCount } = useCart();
+  const { cart, itemCount } = useCart();
 
   return (
     <Popover>
@@ -74,8 +74,10 @@ const CartPopover= () => {
             </Center>
             :
             <Box>
-              <CartItem />
-              <CartItem />
+               {cart.map((product) => (
+                <CartItem key={product.id} item={product} />
+                // Correct the above line: 'item' is the prop name passed to your CartItem component
+              ))}
               <Divider />
               <Flex
                 px={2}

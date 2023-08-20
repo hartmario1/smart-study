@@ -50,6 +50,8 @@ interface BecomeATutor {
   motivation: string;
 }
 
+const flexBg = useColorModeValue('gray.100', 'gray.900')
+
 const Contact = () => {
   return (
     <Formik<BecomeATutor> initialValues = {{
@@ -72,7 +74,7 @@ const Contact = () => {
       {({ handleSubmit, errors, touched }) => (
         <Form>
           <Flex
-            bg={useColorModeValue('gray.100', 'gray.900')}
+            bg={flexBg}
             align="center"
             justify="center"
             css={{

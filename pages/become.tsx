@@ -78,7 +78,7 @@ const Contact = () => {
             align="center"
             justify="center"
             css={{
-              backgroundImage: useColorModeValue(CONFETTI_LIGHT, ''),
+              backgroundImage: CONFETTI_LIGHT,
               backgroundAttachment: 'fixed',
             }}>
             <StandardLayout>

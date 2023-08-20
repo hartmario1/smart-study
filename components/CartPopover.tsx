@@ -94,7 +94,7 @@ const CartPopover= () => {
                 </Text>
               </Flex>
               <Center paddingTop="2">
-                <Link w="100%" as={NextLink} href="/checkout">
+                <Link w="100%" as={NextLink} href="https://buy.stripe.com/test_14k14a6d50fd2yI8ww">
                   <ChakraBox
                     whileTap={{ scale: 0.9 }}
                     opacity="1">

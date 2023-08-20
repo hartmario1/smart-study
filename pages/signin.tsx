@@ -4,7 +4,6 @@ import NextLink from 'next/link'
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { useRouter } from "next/router";
-import { FcGoogle } from 'react-icons/fc';
 
 interface Account {
   email: string;

@@ -51,6 +51,8 @@ interface BecomeATutor {
 }
 
 const Contact = () => {  
+  const vercelFix = useColorModeValue('gray.100', 'gray.900')
+
   return (
     <Formik<BecomeATutor> initialValues = {{
         name: '',
@@ -72,7 +74,7 @@ const Contact = () => {
       {({ handleSubmit, errors, touched }) => (
         <Form>
           <Flex
-            bg={useColorModeValue('gray.100', 'gray.900')}
+            bg={vercelFix}
             align="center"
             justify="center"
             css={{

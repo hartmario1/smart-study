@@ -4,6 +4,7 @@ import NextLink from 'next/link'
 import { Field, Form, Formik } from "formik";
 import * as Yup from 'yup';
 import { useRouter } from "next/router";
+import { BsFillPersonFill } from 'react-icons/bs';
 
 interface CreateAccount {
   email: string;
@@ -20,12 +21,12 @@ const SignUp = () => {
     <Formik<CreateAccount> initialValues = {{ email: '', password: '', acceptTerms: false }}
       onSubmit = {async values => {
         console.log(values.email, values.password)
-        router.push('/autentificare')
+        router.push('/signup')
       }}
       validationSchema = {Yup.object().shape({
         email: Yup.string().required('This field is required!'),
         password: Yup.string().required('This field is required!'),
-        acceptTerms: Yup.bool().oneOf([true], 'Accept Terms & Conditions is required!')
+        acceptTerms: Yup.bool().oneOf([true], 'Accepting Terms & Conditions is required!')
       })}>
       {({ handleSubmit, errors, touched }) => (
         <Form>
@@ -44,10 +45,10 @@ const SignUp = () => {
               paddingTop="10"
               paddingBottom="5">
               <Center flexDirection="column" paddingBottom="5">
-                <Text fontSize="xl" fontWeight="bold">Înregistrare</Text>
+                <Text fontSize="xl" fontWeight="bold">Sign Up</Text>
                 <Text color="gray.500">
-                  Ai deja cont? {' '}
-                    <Link as={NextLink} color="purple" href="/autentificare">Autentificare</Link>
+                  Already have an account? {' '}
+                    <Link as={NextLink} color="purple" href="/signin">Sign In</Link>
                 </Text>
               </Center>
               <Stack paddingY="5">
@@ -55,15 +56,15 @@ const SignUp = () => {
                   <Field name = "email">
                     {({ field }: { field: any }) => (
                       <FormControl>
-                      <FormLabel paddingLeft="2">Email</FormLabel>
-                      <Input
-                        focusBorderColor='purple'
-                        placeholder='Email Address'
-                        size="lg"
-                        borderRadius="md"
-                        borderColor="purple"
-                        {...field}
-                      />
+                        <FormLabel paddingLeft="2">Email</FormLabel>
+                        <Input
+                          focusBorderColor='purple'
+                          placeholder='Email Address'
+                          size="lg"
+                          borderRadius="md"
+                          borderColor="purple"
+                          {...field}
+                        />
                     </FormControl>
                     )}
                   </Field>
@@ -79,7 +80,7 @@ const SignUp = () => {
                   <Field name = "password">
                     {({ field }: { field: any }) => (
                       <FormControl>
-                      <FormLabel paddingLeft="2">Parolă</FormLabel>
+                      <FormLabel paddingLeft="2">Password</FormLabel>
                       <InputGroup size='lg'>
                         <Input
                           pr='4.5rem'
@@ -109,8 +110,8 @@ const SignUp = () => {
                 </Box>
                 <Field as={Checkbox} size="lg" name="acceptTerms">
                   <Text fontSize="md">
-                    Sunt de acord cu {' '}
-                    <Link href="/" as={NextLink} borderRadius="2xl" color="purple">termenii și condițilele</Link>
+                    I agree to the {' '}
+                    <Link href="/" as={NextLink} borderRadius="2xl" color="purple">Terms and Conditions</Link>
                   </Text>
                 </Field>
                 {errors.acceptTerms && touched.acceptTerms
@@ -128,7 +129,10 @@ const SignUp = () => {
                   borderRadius="lg"
                   backgroundColor='purple'
                   _hover={{ bg: "hoverpurple" }}
-                  color="white">Înregistrare</Button>
+                  leftIcon={<BsFillPersonFill />}
+                  color="white">
+                    Sign Up
+                  </Button>
               </Stack>
             </Box>
           </Center>

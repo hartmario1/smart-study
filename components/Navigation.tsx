@@ -1,8 +1,8 @@
-import { Badge, Box, Button, ButtonGroup, Center, Flex, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react"
+import { Box, Button, ButtonGroup, Center, Flex, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react"
 import NextLink from "next/link";
 import { FiMenu, FiX } from 'react-icons/fi';
 import ChakraBox from "./ChakraBox";
-import { BsCart2, BsFillPersonFill } from 'react-icons/bs';
+import { BsFillPersonFill } from 'react-icons/bs';
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import CartPopover from "./CartPopover";
@@ -89,7 +89,7 @@ const Navigation = () => {
                 </Button>
               </ChakraBox>
             </Link>
-            <Link as={NextLink} href = "/inregistrare">
+            <Link as={NextLink} href = "/signin">
               <ChakraBox
                   whileTap={{ scale: 0.9 }}
                   opacity="1">

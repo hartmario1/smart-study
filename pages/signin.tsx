@@ -44,10 +44,10 @@ const SignUp = () => {
               paddingTop="10"
               paddingBottom="5">
               <Center flexDirection="column" paddingBottom="5">
-                <Text fontSize="xl" fontWeight="bold">Autentificare</Text>
+                <Text fontSize="xl" fontWeight="bold">Sign In</Text>
                 <Text color="gray.500">
-                  Ai deja cont? {' '}
-                    <Link as={NextLink} color="purple" href="/inregistrare">Înregistrare</Link>
+                  Dont't have an account? {' '}
+                    <Link as={NextLink} color="purple" href="/signup">Sing Up</Link>
                 </Text>
               </Center>
               <Stack paddingY="5">
@@ -79,7 +79,7 @@ const SignUp = () => {
                   <Field name = "password">
                     {({ field }: { field: any }) => (
                       <FormControl>
-                      <FormLabel paddingLeft="2">Parolă</FormLabel>
+                      <FormLabel paddingLeft="2">Password</FormLabel>
                       <InputGroup size='lg'>
                         <Input
                           pr='4.5rem'
@@ -114,24 +114,10 @@ const SignUp = () => {
                   w="100%"
                   backgroundColor='purple'
                   _hover={{ bg: "hoverpurple" }}
-                  color="white">Autentificare</Button>
+                  color="white">Sign In</Button>
               </Box>
-              <Box paddingTop='3' paddingBottom={"7"}>
-                <Button
-                  onClick = {() => console.log("Google log in")}
-                  w="100%"
-                  backgroundColor='white'
-                  border={'1px'}
-                  borderColor="gray.400"
-                  leftIcon={<FcGoogle />}
-                  variant={'outline'}>
-                  <Center>
-                    <Text>Autentificare cu Google</Text>
-                  </Center>
-                </Button>
-              </Box>
-              <Center>
-                <Link borderRadius="2xl" color="purple">Ai uitat parola?</Link>
+              <Center paddingTop={5}>
+                <Link borderRadius="2xl" color="purple">Forgot your password?</Link>
               </Center>
             </Box>
           </Center>

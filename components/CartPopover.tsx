@@ -1,5 +1,5 @@
 import { useCart } from './CartContext';
-import { Popover, PopoverTrigger, PopoverContent, PopoverBody, Box, IconButton, Badge, Center, Text, Button, Heading, HStack, Flex, useColorModeValue, Divider, Link } from '@chakra-ui/react';
+import { Popover, PopoverTrigger, PopoverContent, PopoverBody, Box, IconButton, Badge, Center, Text, Button, Flex, Divider, Link } from '@chakra-ui/react';
 import { BsCart2 } from 'react-icons/bs';
 import { MdOutlineRemoveShoppingCart } from 'react-icons/md';
 import ChakraBox from './ChakraBox';

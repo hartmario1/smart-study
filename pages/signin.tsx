@@ -46,7 +46,7 @@ const SignUp = () => {
               <Center flexDirection="column" paddingBottom="5">
                 <Text fontSize="xl" fontWeight="bold">Sign In</Text>
                 <Text color="gray.500">
-                  Dont't have an account? {' '}
+                  Don&rsquo;t have an account? {' '}
                     <Link as={NextLink} color="purple" href="/signup">Sing Up</Link>
                 </Text>
               </Center>

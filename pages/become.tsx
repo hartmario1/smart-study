@@ -62,7 +62,7 @@ const Contact = () => {
         motivation: ''
       }}
       onSubmit = {async values => {
-        alert([values.name, values.email, values.university, values.course, values.motivation])
+        console.log([values.name, values.email, values.university, values.course, values.motivation])
       }}
       validationSchema = {Yup.object().shape({
         name: Yup.string().required('This field is required!'),

@@ -1,0 +1,70 @@
+version: "3.7"
+
+services:
+  dash:
+    build:
+      context: ./
+      dockerfile: docker/dash/Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+
+  api:
+    build:
+      context: ./
+      dockerfile: docker/api/Dockerfile
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+    environment: 
+      DB_URL: "postgres://smartstudy:admin@postgres:5432/smartstudy"
+      # STRIPE_PRICE_ID: "price_1IflayLoZxvFDzrnkopX8bUP"
+      REDIS_URL: "redis://redis:6379/0"
+
+  redis:
+    image: redis:5-alpine
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping"]
+      interval: 10s
+      timeout: 5s
+
+  redis-exporter:
+    image: oliver006/redis_exporter:alpine
+    environment:
+      REDIS_ADDR: "redis://redis:6379"
+    restart: unless-stopped
+
+
+  postgres:
+    build: 
+      context: ./
+      dockerfile: docker/postgresql/Dockerfile
+    environment:
+      POSTGRES_USER: 'smartstudy'
+      POSTGRES_PASSWORD: 'admin'
+      POSTGRES_DB: 'smartstudy'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    ports: 
+      - 5432:5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U smartstudy"]
+      interval: 10s
+      timeout: 5s
+
+  postgres-exporter:
+    image: wrouesnel/postgres_exporter:latest
+    environment:
+      DATA_SOURCE_NAME: "postgres://smartstudy:admin@postgres:5432/smartstudy?sslmode=disable"
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+    name: "smartstudy-postgres-data"
+  redis-data:
+    name: "smartstudy-redis-data"

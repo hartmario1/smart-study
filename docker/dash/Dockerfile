@@ -1,7 +1,7 @@
 FROM node:18-alpine
 LABEL name "smartstudy"
 
-WORKDIR /usr/
+WORKDIR /usr/services/dash
 
 EXPOSE 3000
 

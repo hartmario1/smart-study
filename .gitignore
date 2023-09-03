@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+data
+
+.vscode/**
+!.vscode/settings.json
+
 # dependencies
 /node_modules
 /.pnp
@@ -14,6 +19,7 @@
 
 # production
 /build
+dist
 
 # misc
 .DS_Store
@@ -34,3 +40,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+types
+!**/src/types
+
+# docker
+services/dash/.next
+services/dash/*.local
+*.log
+docker-compose.config.yml
+
+data/certbot/**
+
+.env.*.local

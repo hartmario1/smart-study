@@ -14,11 +14,11 @@ services:
       context: ./
       dockerfile: docker/api/Dockerfile
     depends_on:
-      - postgres
+      # - postgres
       - redis
     restart: unless-stopped
     environment: 
-      DB_URL: "postgres://smartstudy:admin@postgres:5432/smartstudy"
+      # DB_URL: "postgres://smartstudy:admin@postgres:5432/smartstudy"
       # STRIPE_PRICE_ID: "price_1IflayLoZxvFDzrnkopX8bUP"
       REDIS_URL: "redis://redis:6379/0"
 

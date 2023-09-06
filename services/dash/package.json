@@ -30,7 +30,6 @@
     "@smartstudy/common": "workspace:^0.1.0",
     "formik": "^2.2.9",
     "framer-motion": "^6.5.1",
-    "next": "^10.2.3",
     "next": "^13.4.12",
     "next-translate": "^2.5.2",
     "next-translate-plugin": "^2.5.3",

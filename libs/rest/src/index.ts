@@ -5,7 +5,7 @@ import helmet from 'helmet';
 import cookie from 'cookie';
 import { Histogram } from 'prom-client';
 import { container } from 'tsyringe';
-import { Config, kConfig, kLogger } from '@soulkiller/injection';
+import { Config, kConfig, kLogger } from '@smartstudy/injection';
 import type { Logger } from 'winston';
 
 const responseTimes = new Histogram({

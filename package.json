@@ -3,12 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "lint": "npm run lint:recursive",
-    "lint:recursive": "npm-run-all --parallel lint:*",    
-    "build:api": "npm run biuld",
-    "build:dash": "next build",
-    "start:dash": "next start services/dash",
-    "build": "npm run build",
+    "lint": "pnpm recursive --filter @smartstudy/* run lint",
+    "build": "pnpm recursive --filter @smartstudy/* run build",
     "test": "jest"
   },
   "browserslist": [

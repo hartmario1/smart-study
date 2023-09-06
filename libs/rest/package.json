@@ -1,5 +1,5 @@
 {
-  "name": "@soulkiller/rest",
+  "name": "@smartstudy/rest",
   "description": "Small library for building RESTful APIs",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soulkiller.io/soulkiller.git"
+    "url": "git+https://github.com/smartstudy.io/smartstudy.git"
   },
   "bugs": {
-    "url": "https://github.com/soulkiller.io/soulkiller/issues"
+    "url": "https://github.com/smartstudy.io/smartstudy/issues"
   },
-  "homepage": "https://github.com/soulkiller.io/soulkiller#readme",
+  "homepage": "https://github.com/smartstudy.io/smartstudy#readme",
   "devDependencies": {
     "@types/cookie": "^0.4.1",
     "@types/cors": "^2.8.12",
@@ -32,9 +32,9 @@
   },
   "dependencies": {
     "@hapi/boom": "^9.1.3",
-    "@soulkiller/common": "workspace:0.1.0",
-    "@soulkiller/injection": "workspace:^0.1.0",
-    "@soulkiller/logger": "workspace:0.1.0",
+    "@smartstudy/common": "workspace:0.1.0",
+    "@smartstudy/injection": "workspace:^0.1.0",
+    "@smartstudy/logger": "workspace:0.1.0",
     "cookie": "^0.4.1",
     "cors": "^2.8.5",
     "helmet": "^4.6.0",

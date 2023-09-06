@@ -2,7 +2,7 @@ import { Boom, isBoom, notFound } from '@hapi/boom';
 import { sendBoom } from './sendBoom';
 import { createServer } from 'http';
 import { container } from 'tsyringe';
-import { kLogger } from '@soulkiller/injection';
+import { kLogger } from '@smartstudy/injection';
 import type * as polka from 'polka';
 import type { Logger } from 'winston';
 

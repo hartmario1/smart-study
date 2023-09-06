@@ -1,4 +1,4 @@
-export const kConfig = Symbol('soulkiller config');
+export const kConfig = Symbol('smartstudy config');
 
 export const kSql = Symbol('postgres instance');
 

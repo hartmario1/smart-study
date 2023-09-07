@@ -18,6 +18,9 @@
       "error",
       "all"
     ],
-    "no-redeclare": "off"
+    "no-redeclare": "off",
+    "parserOptions": {
+      "sourceType": "commonjs"
+    }
   }
 }
